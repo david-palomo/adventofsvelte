@@ -15,6 +15,9 @@ export default {
 		colors: {
 			primary: 'var(--pico-primary)'
 		},
+		fontFamily: {
+			sans: ['Clear Sans Medium', ...defaultTheme.fontFamily.sans]
+		},
 		extend: {}
 	},
 	plugins: []

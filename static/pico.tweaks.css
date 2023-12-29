@@ -1,0 +1,117 @@
+:root {
+	--pico-font-size: 100%;
+	--pico-border-radius: 0.375rem;
+	--pico-font-family: 'Clear Sans Medium', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@media only screen and (min-width: 768px) {
+	:root {
+		--pico-font-size: 110%;
+	}
+}
+
+:where(:root),
+article,
+button,
+input,
+select,
+textarea {
+	transition: background-color 150ms ease-in-out;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+	max-width: 100%;
+	padding-inline: var(--pico-spacing);
+}
+
+.toggle-sun {
+	display: var(--pico-display-sun);
+}
+
+.toggle-moon {
+	display: var(--pico-display-moon);
+}
+
+/* Orange color for light color scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+	--pico-text-selection-color: rgba(244, 93, 44, 0.25);
+	--pico-primary: #ff3e00;
+	--pico-primary-background: #eb5320;
+	--pico-primary-underline: rgba(189, 60, 19, 0.5);
+	--pico-primary-hover: #942d0d;
+	--pico-primary-hover-background: #bd3c13;
+	--pico-primary-focus: rgba(244, 93, 44, 0.25);
+	--pico-primary-inverse: #fff;
+	--pico-ok: #00895a;
+	--pico-ok-bg: #54c59f5b;
+	--pico-error-bg: #d783835b;
+	--pico-border-color: #c5cad6;
+	--pico-range-border-color: #d6d8de;
+	--pico-range-active-border-color: #d6d8de;
+	--pico-range-thumb-border-color: var(--pico-color);
+	--pico-range-thumb-color: var(--pico-primary-background);
+	--pico-display-moon: none;
+	--pico-display-sun: block;
+}
+
+/* Orange color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		--pico-text-selection-color: rgba(245, 107, 61, 0.1875);
+		--pico-primary: #f64e20;
+		--pico-primary-background: #d43f16;
+		--pico-primary-underline: rgba(245, 107, 61, 0.5);
+		--pico-primary-hover: #f8a283;
+		--pico-primary-hover-background: #e74b1a;
+		--pico-primary-focus: rgba(245, 107, 61, 0.25);
+		--pico-primary-inverse: #fff;
+		--pico-ok: #00c482;
+		--pico-ok-bg: #22926d5b;
+		--pico-error-bg: #9930415b;
+		--pico-border-color: #2a3140;
+		--pico-range-border-color: var(--pico-muted-color);
+		--pico-range-active-border-color: var(--pico-muted-color);
+		--pico-range-thumb-border-color: var(--pico-background-color);
+		--pico-range-thumb-color: var(--pico-primary-background);
+		--pico-display-moon: block;
+		--pico-display-sun: none;
+	}
+}
+
+/* Orange color for dark color scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+	--pico-text-selection-color: rgba(245, 107, 61, 0.1875);
+	--pico-primary: #f64e20;
+	--pico-primary-background: #d43f16;
+	--pico-primary-underline: rgba(245, 107, 61, 0.5);
+	--pico-primary-hover: #f8a283;
+	--pico-primary-hover-background: #a72700;
+	--pico-primary-focus: rgba(245, 107, 61, 0.25);
+	--pico-primary-inverse: #fff;
+	--pico-ok: #00c482;
+	--pico-ok-bg: #22926d5b;
+	--pico-error-bg: #9930415b;
+	--pico-border-color: #2a3140;
+	--pico-range-border-color: var(--pico-muted-color);
+	--pico-range-active-border-color: var(--pico-muted-color);
+	--pico-range-thumb-border-color: var(--pico-background-color);
+	--pico-range-thumb-color: var(--pico-primary-background);
+	--pico-display-moon: block;
+	--pico-display-sun: none;
+}
