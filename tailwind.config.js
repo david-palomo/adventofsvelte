@@ -13,7 +13,10 @@ export default {
 			'3xl': '1700px'
 		},
 		colors: {
-			primary: 'var(--pico-primary)'
+			primary: 'var(--pico-primary)',
+			secondary: 'var(--pico-secondary)',
+			ok: 'var(--pico-ok)',
+			error: 'var(--pico-error)'
 		},
 		fontFamily: {
 			sans: ['Clear Sans Medium', ...defaultTheme.fontFamily.sans]

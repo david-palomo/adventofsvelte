@@ -25,7 +25,7 @@
 </script>
 
 <div class="wrapper relative flex flex-col font-medium font-sans">
-	<main class="container flex flex-col flex-grow max-w-4xl pb-14 2xs:pb-16">
+	<main class="container flex flex-col flex-grow max-w-5xl pb-14 2xs:pb-16">
 		<nav class="pt-2 sm:pt-3 pb-3 sm:pb-4 mx-1">
 			<ul class="pb-1">
 				<li class="py-0">
@@ -56,7 +56,7 @@
 	</main>
 
 	<footer class="absolute bottom-0 w-full h-14 2xs:h-16">
-		<div class="m-auto max-w-4xl px-2 pt-3 2xs:pt-4 text-sm flex justify-between">
+		<div class="m-auto max-w-5xl px-2 pt-3 2xs:pt-4 text-sm flex justify-between">
 			<p class="text-[var(--pico-muted-color)] mx-2 2xs:mx-4">
 				Built by <a href="https://github.com/code406" class="secondary">code406</a>
 			</p>

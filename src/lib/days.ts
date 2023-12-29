@@ -2,8 +2,8 @@ type Day = { day: number; completed: boolean; title: string };
 
 export const days: Day[] = [
 	{ day: 1, completed: true, title: 'Naughty or Nice' },
-	{ day: 2, completed: false, title: 'Merry Munch-o-Meter' },
-	{ day: 3, completed: false, title: 'Jingle Bell Balancer' },
+	{ day: 2, completed: true, title: 'Merry Munch-o-Meter' },
+	{ day: 3, completed: true, title: 'Jingle Bell Balancer' },
 	{ day: 4, completed: false, title: 'Heart of Christmas' },
 	{ day: 5, completed: false, title: 'Present Progress' },
 	{ day: 6, completed: false, title: 'Misteltoe Metronome' },

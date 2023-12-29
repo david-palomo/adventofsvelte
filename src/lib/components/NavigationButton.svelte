@@ -1,20 +1,27 @@
 <script lang="ts">
 	import { CaretLeft, CaretRight } from 'phosphor-svelte';
 
-	let { href, direction } = $props<{
+	let { href, type, extraText } = $props<{
 		href?: string;
-		direction?: 'left' | 'right';
+		type?: 'previous' | 'next';
+		extraText?: string;
 	}>();
 </script>
 
-<a
-	{href}
-	class="rounded-md p-1 transition-all border-2 border-[--pico-border-color] hover:border-primary h-fit
-		{href ? '' : 'opacity-0'} ease-in-out"
->
-	{#if direction === 'left'}
-		<CaretLeft class="w-5 h-5" />
-	{:else}
-		<CaretRight class="w-5 h-5" />
+<a {href} role="button" class="secondary outline p-1 {href ? '' : 'opacity-0'}">
+	{#if type === 'previous'}
+		<div class="flex items-center lg:space-x-3 lg:mx-2">
+			<CaretLeft class="w-5 h-5" />
+			{#if extraText}
+				<span class="hidden lg:inline pr-1 pb-0.5 min-w-24">{extraText}</span>
+			{/if}
+		</div>
+	{:else if type === 'next'}
+		<div class="flex items-center lg:space-x-3 lg:mx-2">
+			{#if extraText}
+				<span class="hidden lg:inline pl-1 pb-0.5 min-w-24">{extraText}</span>
+			{/if}
+			<CaretRight class="w-5 h-5" />
+		</div>
 	{/if}
 </a>
