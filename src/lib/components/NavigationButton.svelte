@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { CaretLeft, CaretRight } from 'phosphor-svelte';
-	let { href, direction } = $props<{ href?: string; direction?: 'left' | 'right' }>();
+
+	let { href, direction } = $props<{
+		href?: string;
+		direction?: 'left' | 'right';
+	}>();
 </script>
 
 <a
