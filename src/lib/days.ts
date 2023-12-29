@@ -26,3 +26,17 @@ export const days: Day[] = [
 	{ day: 23, completed: false, title: 'ElfNet Social' },
 	{ day: 24, completed: false, title: "Santa's Magical Tracker" }
 ];
+
+export function getDay(day: number): Day | undefined {
+	return days.find((d) => d.day === day);
+}
+
+export function getNextDayRoute(day: number, path = 'day/'): string | undefined {
+	const nextDay = days.find((d) => d.day > day && d.completed);
+	return nextDay ? `/${path}${nextDay.day}` : undefined;
+}
+
+export function getPreviousDayRoute(day: number, path = 'day/'): string | undefined {
+	const previousDay = days.toReversed().find((d) => d.day < day && d.completed);
+	return previousDay ? `/${path}${previousDay.day}` : undefined;
+}
