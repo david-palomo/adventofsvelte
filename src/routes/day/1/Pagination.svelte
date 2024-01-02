@@ -21,7 +21,7 @@
 		<button
 			disabled={$pageNumber === 1}
 			on:click={() => handler.setPage(1)}
-			class="secondary outline p-1 transition-all ease-in-out"
+			class="secondary outline p-1 transition-all"
 		>
 			<CaretDoubleLeft class="w-5 h-5" />
 		</button>
@@ -29,7 +29,7 @@
 		<button
 			disabled={$pageNumber === 1}
 			on:click={() => handler.setPage('previous')}
-			class="secondary outline p-1 transition-all ease-in-out"
+			class="secondary outline p-1 transition-all"
 		>
 			<CaretLeft class="w-5 h-5" />
 		</button>
@@ -37,7 +37,7 @@
 		<button
 			disabled={$pageNumber === $pageCount}
 			on:click={() => handler.setPage('next')}
-			class="secondary outline p-1 transition-all ease-in-out"
+			class="secondary outline p-1 transition-all"
 		>
 			<CaretLeft class="w-5 h-5 transform rotate-180" />
 		</button>
@@ -45,7 +45,7 @@
 		<button
 			disabled={$pageNumber === $pageCount}
 			on:click={() => handler.setPage($pageCount)}
-			class="secondary outline p-1 transition-all ease-in-out"
+			class="secondary outline p-1 transition-all"
 		>
 			<CaretDoubleLeft class="w-5 h-5 transform rotate-180" />
 		</button>

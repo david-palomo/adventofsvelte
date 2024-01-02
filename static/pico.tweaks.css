@@ -4,6 +4,7 @@
 	--pico-border-width: 2px;
 	--pico-font-family: 'Clear Sans Medium', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--pico-transition: 150ms ease-in-out;
 }
 
 @media only screen and (min-width: 768px) {
@@ -15,12 +16,15 @@
 :where(:root),
 article,
 button,
+[type='submit'],
+[type='button'],
+[role='button'],
 input,
 select,
-textarea {
-	transition: background-color 150ms ease-in-out;
-}
-
+td,
+th,
+textarea,
+article header,
 p,
 h1,
 h2,
@@ -29,24 +33,17 @@ h4,
 h5,
 h6,
 label {
-	transition: color 150ms ease-in-out;
+	transition: all var(--pico-transition);
 }
 
 td,
 th {
 	background: transparent;
-	transition: all 150ms ease-in-out;
 }
 
 :is(button, [type='submit'], [type='button'], [role='button']).outline.secondary,
 [type='reset'].outline {
 	--pico-border-color: inherit;
-	border-width: 2px;
-	transition: all 150ms ease-in-out;
-}
-:is(button, [type='submit'], [type='button'], [role='button']).outline.secondary:hover,
-[type='reset'].outline:hover {
-	--pico-border-color: var(--pico-primary);
 }
 
 .container {

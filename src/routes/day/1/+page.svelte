@@ -66,7 +66,7 @@
 				<input type="number" name="tally" placeholder="Tally (blank = 0)" bind:value={newPersonTally} />
 				<button
 					on:click={addPerson}
-					class="p-3 transition-all ease-in-out bg-[--pico-background-color] text-[--pico-color]"
+					class="p-3 transition-all bg-[--pico-background-color] text-[--pico-color]"
 				>
 					Save
 				</button>
