@@ -30,7 +30,7 @@
 			<ul class="pb-1">
 				<li class="py-0">
 					<a href="/" class="flex font-bold items-center space-x-2 3xs:space-x-3 xs:space-x-4">
-						<img src="/logo.png" alt="Advent of Svelte" class="w-7" />
+						<img src="/logo.svg" alt="Advent of Svelte" class="h-10" />
 						<h1 class="text-lg 3xs:text-xl">Advent of Svelte</h1>
 					</a>
 				</li>
