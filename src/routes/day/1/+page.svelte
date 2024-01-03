@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { DataHandler } from '@vincjo/datatables';
-	import Th from './Th.svelte';
+	import TableHeader from './TableHeader.svelte';
 	import Pagination from './Pagination.svelte';
 	import { Trash } from 'phosphor-svelte';
 
@@ -67,9 +67,9 @@
 		<table class="mb-0 px-8 sticky-first-col">
 			<thead>
 				<tr>
-					<Th {handler} orderBy="name">Name</Th>
-					<Th {handler} orderBy="tally">Status</Th>
-					<Th {handler} orderBy="tally">Tally</Th>
+					<TableHeader {handler} orderBy="name">Name</TableHeader>
+					<TableHeader {handler} orderBy="tally">Status</TableHeader>
+					<TableHeader {handler} orderBy="tally">Tally</TableHeader>
 					<th class="w-0"></th>
 				</tr>
 			</thead>
