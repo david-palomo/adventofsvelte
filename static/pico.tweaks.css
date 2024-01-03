@@ -101,7 +101,7 @@ td {
 	--pico-primary-underline: rgba(197, 47, 33, 0.5);
 	--pico-primary-hover: #9b2318;
 	--pico-primary-hover-background: #07765a;
-	--pico-primary-focus: rgba(240, 96, 72, 0.25);
+	--pico-primary-focus: transparent;
 	--pico-primary-inverse: #fff;
 	--pico-ok: #008967;
 	--pico-ok-bg: #54c59f5b;
@@ -126,7 +126,7 @@ td {
 		--pico-primary-underline: rgba(241, 121, 97, 0.5);
 		--pico-primary-hover: #f5a390;
 		--pico-primary-hover-background: #109b78;
-		--pico-primary-focus: rgba(241, 121, 97, 0.25);
+		--pico-primary-focus: transparent;
 		--pico-primary-inverse: #fff;
 		--pico-ok: #1cce93;
 		--pico-ok-bg: #22926d5b;
@@ -151,7 +151,7 @@ td {
 	--pico-primary-underline: rgba(241, 121, 97, 0.5);
 	--pico-primary-hover: #f5a390;
 	--pico-primary-hover-background: #109b78;
-	--pico-primary-focus: rgba(241, 121, 97, 0.25);
+	--pico-primary-focus: transparent;
 	--pico-primary-inverse: #fff;
 	--pico-ok: #1cce93;
 	--pico-ok-bg: #22926d5b;
