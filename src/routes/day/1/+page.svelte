@@ -5,83 +5,70 @@
 	import { Trash } from 'phosphor-svelte';
 
 	let { data } = $props();
-	let people = $state(data.people);
+	let children = $state(data.children);
 
-	const handler = new DataHandler(data.people, { rowsPerPage: 10 });
+	const handler = new DataHandler(data.children, { rowsPerPage: 10 });
 	let rows = $derived(handler.getRows());
 
 	$effect(() => {
-		handler.setRows(people);
+		handler.setRows(children);
 	});
 
-	let newPersonName = $state('');
-	let newPersonTally = $state('');
-	function addPerson() {
-		people = [
+	let newChildName = $state('');
+	function addChild() {
+		children = [
 			{
-				id: Math.max(...people.map((p: any) => p.id)) + 1,
-				name: newPersonName,
-				tally: Number(newPersonTally) ?? 0
+				id: Math.max(...children.map((p: any) => p.id)) + 1,
+				name: newChildName,
+				tally: 0
 			},
-			...people
+			...children
 		];
 	}
 
 	function incrementTally(id: number, amount: number) {
 		console.log(`add 1 to ${id}`);
-		people = people.map((p: any) => {
+		children = children.map((p: any) => {
 			if (p.id === id) return { ...p, tally: p.tally + amount };
 			return p;
 		});
 	}
-	function removePerson(id: number) {
+	function removeChild(id: number) {
 		console.log(`remove ${id}`);
-		people = people.filter((p) => p.id !== Number(id));
+		children = children.filter((p) => p.id !== Number(id));
 	}
 </script>
 
-<div class="grid grid-cols-1 gap-x-8 gap-y-0 md:grid-cols-2">
-	<article class="py-5 px-5 flex flex-col space-y-4 bel-air">
-		<span>
-			In <strong>West Philadelphia</strong> born and raised, on the playground is where I spent most of my days.
-			Chillin' out, maxin', relaxin' all cool, and all shootin' some b-ball outside of the school...
-		</span>
-		<span>
-			When a couple of guys who were up to no good started makin' trouble in my neighborhood, I got in one
-			little fight and my mom got scared and said "You're movin' with your auntie and uncle in <strong
-				>Bel-Air</strong
-			>".
-		</span>
-	</article>
+<article class="py-5 px-5 flex flex-col space-y-4 description mb-5 md:mb-6">
+	<span>The ancient system for tracking who's been naughty or nice is out of commission.</span>
+	<span>
+		The elves need a quick replacement system to input names and <strong>tally each child's deeds</strong>.
+	</span>
+</article>
 
-	<article class="px-0">
-		<header class="px-6 py-4 mb-5 mx-0">
-			<h2 class="text-sm md:text-base font-bold">Add new Person</h2>
-		</header>
-		<div class="flex flex-col justify-center">
-			<div class="px-6">
-				<input type="text" name="name" placeholder="Name" bind:value={newPersonName} />
-			</div>
-			<div role="group" class="w-full mb-0 px-6">
-				<input type="number" name="tally" placeholder="Tally (blank = 0)" bind:value={newPersonTally} />
-				<button
-					on:click={addPerson}
-					class="p-3 transition-all bg-[--pico-background-color] text-[--pico-color]"
-				>
-					Save
-				</button>
-			</div>
+<div class="grid grid-cols-1 gap-x-8 gap-y-0 md:grid-cols-2">
+	<article class="p-0 mb-5 md:mb-6">
+		<label for="search" class="px-5 pt-4">Search by Name</label>
+		<div role="group" class="px-5 pb-6 w-full my-auto">
+			<input type="text" name="search" placeholder="Search..." />
+		</div>
+	</article>
+	<article class="p-0 mb-5 md:mb-6">
+		<label for="name" class="px-5 pt-4">Add New Child</label>
+		<div role="group" class="px-5 pb-6 w-full my-auto">
+			<input type="text" name="name" placeholder="Name" bind:value={newChildName} />
+			<button on:click={addChild} class="p-3 transition-all bg-bg text-fg whitespace-nowrap">Save</button>
 		</div>
 	</article>
 </div>
 
-<article class="p-0">
-	<div class="overflow-x-auto">
-		<table class="mb-0 px-8">
+<article class="p-0 mb-5 md:mb-6">
+	<div class="overflow-x-auto rounded-md">
+		<table class="mb-0 px-8 sticky-first-col">
 			<thead>
 				<tr>
 					<Th {handler} orderBy="name">Name</Th>
-					<Th {handler} orderBy="tally" hideMobile={true}>Status</Th>
+					<Th {handler} orderBy="tally">Status</Th>
 					<Th {handler} orderBy="tally">Tally</Th>
 					<th class="w-0"></th>
 				</tr>
@@ -91,9 +78,9 @@
 					<tr>
 						<td>{row.name}</td>
 						{#if row.tally >= 0}
-							<td class="text-ok hidden sm:table-cell">nice</td>
+							<td class="text-ok">nice</td>
 						{:else}
-							<td class="text-primary hidden sm:table-cell">naughty</td>
+							<td class="text-primary">naughty</td>
 						{/if}
 						<td>{row.tally}</td>
 						<td>
@@ -113,7 +100,7 @@
 									<span class="text-ok inline-block w-6">+1</span>
 								</button>
 								<button
-									on:click={() => removePerson(row.id)}
+									on:click={() => removeChild(row.id)}
 									data-id={row.id}
 									class="p-2 secondary outline hover:border-primary"
 									title="Delete"
@@ -128,7 +115,7 @@
 		</table>
 	</div>
 
-	<div class="table-footer pt-2 pb-8">
+	<div class="table-footer pt-2 pb-8 rounded-b-md">
 		{#if $rows.length === 0}
 			<div class="text-center text-secondary">No people yet</div>
 		{:else}
@@ -138,14 +125,3 @@
 		{/if}
 	</div>
 </article>
-
-<style>
-	.table-footer,
-	thead {
-		background: var(--pico-table-row-stripped-background-color);
-	}
-
-	.bel-air strong {
-		color: var(--pico-primary);
-	}
-</style>

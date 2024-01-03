@@ -4,7 +4,8 @@
 	--pico-border-width: 2px;
 	--pico-font-family: 'Clear Sans Medium', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--pico-transition: 150ms ease-in-out;
+	--pico-transition-duration: 0;
+	--pico-transition: var(--pico-transition-duration) ease-in-out;
 }
 
 @media only screen and (min-width: 768px) {
@@ -16,15 +17,30 @@
 :where(:root),
 article,
 button,
-[type='submit'],
-[type='button'],
-[role='button'],
 input,
 select,
-td,
-th,
-textarea,
-article header,
+textarea {
+	transition: background-color var(--pico-transition);
+}
+
+.sticky-first-col tr > th:first-child,
+.sticky-first-col tr > td:first-child {
+	position: sticky;
+	left: 0;
+}
+
+article,
+.card {
+	border: 2px solid var(--pico-border-color);
+	margin-bottom: 0;
+}
+
+.card {
+	border-radius: var(--pico-border-radius);
+	background: var(--pico-card-background-color);
+	box-shadow: var(--pico-card-box-shadow);
+}
+
 p,
 h1,
 h2,
@@ -33,17 +49,29 @@ h4,
 h5,
 h6,
 label {
-	transition: all var(--pico-transition);
+	transition: color var(--pico-transition);
 }
 
 td,
 th {
-	background: transparent;
+	transition: all var(--pico-transition);
+	border-collapse: collapse;
+	background-clip: padding-box;
+}
+
+th,
+.table-footer {
+	background-color: var(--pico-card-sectioning-background-color);
+}
+
+td {
+	background-color: var(--pico-card-background-color);
 }
 
 :is(button, [type='submit'], [type='button'], [role='button']).outline.secondary,
 [type='reset'].outline {
 	--pico-border-color: inherit;
+	transition: all var(--pico-transition);
 }
 
 .container {
@@ -59,21 +87,25 @@ th {
 	display: var(--pico-display-moon);
 }
 
+.description strong {
+	color: var(--pico-primary);
+}
+
 /* Orange color for light color scheme (Default) */
 /* Can be forced with data-theme="light" */
 [data-theme='light'],
 :root:not([data-theme='dark']) {
 	--pico-text-selection-color: rgba(240, 96, 72, 0.25);
-	--pico-primary: #c52f21;
-	--pico-primary-background: #c52f21;
+	--pico-primary: #c72240;
+	--pico-primary-background: #008967;
 	--pico-primary-underline: rgba(197, 47, 33, 0.5);
 	--pico-primary-hover: #9b2318;
-	--pico-primary-hover-background: #af291d;
+	--pico-primary-hover-background: #07765a;
 	--pico-primary-focus: rgba(240, 96, 72, 0.25);
 	--pico-primary-inverse: #fff;
-	--pico-ok: #00895a;
+	--pico-ok: #008967;
 	--pico-ok-bg: #54c59f5b;
-	--pico-error: #bd2d1d;
+	--pico-error: #c72240;
 	--pico-error-bg: #d783835b;
 	--pico-border-color: #c5cad6;
 	--pico-range-border-color: #d6d8de;
@@ -89,16 +121,16 @@ th {
 @media only screen and (prefers-color-scheme: dark) {
 	:root:not([data-theme]) {
 		--pico-text-selection-color: rgba(241, 121, 97, 0.1875);
-		--pico-primary: #f95853;
-		--pico-primary-background: #c52f21;
+		--pico-primary: #f7525a;
+		--pico-primary-background: #008967;
 		--pico-primary-underline: rgba(241, 121, 97, 0.5);
 		--pico-primary-hover: #f5a390;
-		--pico-primary-hover-background: #d93526;
+		--pico-primary-hover-background: #109b78;
 		--pico-primary-focus: rgba(241, 121, 97, 0.25);
 		--pico-primary-inverse: #fff;
-		--pico-ok: #00c482;
+		--pico-ok: #1cce93;
 		--pico-ok-bg: #22926d5b;
-		--pico-error: #f5514b;
+		--pico-error: #f7525a;
 		--pico-error-bg: #9930415b;
 		--pico-border-color: #2a3140;
 		--pico-range-border-color: var(--pico-muted-color);
@@ -114,16 +146,16 @@ th {
 /* Enabled if forced with data-theme="dark" */
 [data-theme='dark'] {
 	--pico-text-selection-color: rgba(241, 121, 97, 0.1875);
-	--pico-primary: #f95853;
-	--pico-primary-background: #c52f21;
+	--pico-primary: #f7525a;
+	--pico-primary-background: #008967;
 	--pico-primary-underline: rgba(241, 121, 97, 0.5);
 	--pico-primary-hover: #f5a390;
-	--pico-primary-hover-background: #d93526;
+	--pico-primary-hover-background: #109b78;
 	--pico-primary-focus: rgba(241, 121, 97, 0.25);
 	--pico-primary-inverse: #fff;
-	--pico-ok: #00c482;
+	--pico-ok: #1cce93;
 	--pico-ok-bg: #22926d5b;
-	--pico-error: #f5514b;
+	--pico-error: #f7525a;
 	--pico-error-bg: #9930415b;
 	--pico-border-color: #2a3140;
 	--pico-range-border-color: var(--pico-muted-color);

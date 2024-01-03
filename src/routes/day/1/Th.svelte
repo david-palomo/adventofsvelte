@@ -6,12 +6,14 @@
 		handler,
 		orderBy,
 		children,
-		hideMobile = false
+		hideMobile = false,
+		sticky = false
 	} = $props<{
 		handler: DataHandler;
 		orderBy?: string;
 		children?: any;
 		hideMobile?: boolean;
+		sticky?: boolean;
 	}>();
 
 	const identifier = orderBy?.toString();
@@ -22,6 +24,7 @@
 	class:cursor-pointer={orderBy}
 	on:click={() => handler.sort(orderBy as Field<any>)}
 	class={hideMobile ? 'hidden sm:table-cell' : 'table-cell'}
+	class:bg-bg={sticky}
 >
 	<div class="flex items-center space-x-1.5 py-4">
 		<strong>

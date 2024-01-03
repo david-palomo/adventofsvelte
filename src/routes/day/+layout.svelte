@@ -6,18 +6,13 @@
 	let day = $derived(Number($page.route.id?.split('/').pop() ?? 0));
 </script>
 
-<!-- Mobile -->
-<div class="flex lg:hidden justify-between mt-2 mb-10 items-center">
+<div class="flex justify-between mt-5 mb-7 sm:mb-12 items-center">
 	<NavigationButton type="previous" href={getPreviousDayRoute(day)} />
-	<h2 class="xs:text-lg md:text-xl font-bold">Day {day}: {getDay(day)?.title}</h2>
+	<h2 class="xs:text-lg sm:text-xl font-bold">
+		<span class="text-ok">Day {day}:</span>
+		<span class="pl-1">{getDay(day)?.title}</span>
+	</h2>
 	<NavigationButton type="next" href={getNextDayRoute(day)} />
-</div>
-
-<!-- Desktop -->
-<div class="hidden lg:flex justify-between mt-2 mb-10 items-center">
-	<NavigationButton type="previous" href={getPreviousDayRoute(day)} extraText="Previous Day" />
-	<h2 class="xs:text-lg md:text-xl font-bold">Day {day}: {getDay(day)?.title}</h2>
-	<NavigationButton type="next" href={getNextDayRoute(day)} extraText="Next Day" />
 </div>
 
 <slot />

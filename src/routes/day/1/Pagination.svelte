@@ -6,9 +6,13 @@
 	let pageNumber = $derived(handler.getPageNumber());
 	let pageCount = $derived(handler.getPageCount());
 
+	const setPage = (page: number | 'previous' | 'next') => {
+		return () => handler.setPage(page);
+	};
+
 	$effect(() => {
-		if ($pageNumber === 0) handler.setPage(1);
-		else if ($pageNumber > $pageCount) handler.setPage($pageCount);
+		if ($pageNumber === 0) setPage(1);
+		else if ($pageNumber > $pageCount) setPage($pageCount);
 	});
 </script>
 
@@ -18,35 +22,19 @@
 	</div>
 
 	<div>
-		<button
-			disabled={$pageNumber === 1}
-			on:click={() => handler.setPage(1)}
-			class="secondary outline p-1 transition-all"
-		>
+		<button disabled={$pageNumber === 1} on:click={setPage(1)} class="secondary outline p-1">
 			<CaretDoubleLeft class="w-5 h-5" />
 		</button>
 
-		<button
-			disabled={$pageNumber === 1}
-			on:click={() => handler.setPage('previous')}
-			class="secondary outline p-1 transition-all"
-		>
+		<button disabled={$pageNumber === 1} on:click={setPage('previous')} class="secondary outline p-1">
 			<CaretLeft class="w-5 h-5" />
 		</button>
 
-		<button
-			disabled={$pageNumber === $pageCount}
-			on:click={() => handler.setPage('next')}
-			class="secondary outline p-1 transition-all"
-		>
+		<button disabled={$pageNumber === $pageCount} on:click={setPage('next')} class="secondary outline p-1">
 			<CaretLeft class="w-5 h-5 transform rotate-180" />
 		</button>
 
-		<button
-			disabled={$pageNumber === $pageCount}
-			on:click={() => handler.setPage($pageCount)}
-			class="secondary outline p-1 transition-all"
-		>
+		<button disabled={$pageNumber === $pageCount} on:click={setPage($pageCount)} class="secondary outline p-1">
 			<CaretDoubleLeft class="w-5 h-5 transform rotate-180" />
 		</button>
 	</div>
