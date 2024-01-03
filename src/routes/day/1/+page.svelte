@@ -47,7 +47,7 @@
 </article>
 
 <div class="grid grid-cols-1 gap-x-8 gap-y-0 md:grid-cols-2">
-	<article class="p-0 mb-5 md:mb-6">
+	<article class="p-0 mb-5 md:mb-6 order-last md:order-first">
 		<label for="search" class="px-5 pt-4">Search by Name</label>
 		<div role="group" class="px-5 pb-6 w-full my-auto">
 			<input type="text" name="search" placeholder="Search..." />
