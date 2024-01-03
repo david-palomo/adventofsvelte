@@ -97,13 +97,13 @@ td {
 :root:not([data-theme='dark']) {
 	--pico-text-selection-color: rgba(240, 96, 72, 0.25);
 	--pico-primary: #c72240;
-	--pico-primary-background: #008967;
+	--pico-primary-background: #008563;
 	--pico-primary-underline: rgba(197, 47, 33, 0.5);
 	--pico-primary-hover: #9b2318;
-	--pico-primary-hover-background: #07765a;
+	--pico-primary-hover-background: #086b53;
 	--pico-primary-focus: transparent;
 	--pico-primary-inverse: #fff;
-	--pico-ok: #008967;
+	--pico-ok: #008563;
 	--pico-ok-bg: #54c59f5b;
 	--pico-error: #c72240;
 	--pico-error-bg: #d783835b;

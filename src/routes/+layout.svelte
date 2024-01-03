@@ -30,19 +30,19 @@
 			<ul class="pb-1">
 				<li class="py-0">
 					<a href="/" class="flex font-bold items-center space-x-2 3xs:space-x-3 xs:space-x-4">
-						<img src="/logo.svg" alt="Advent of Svelte" class="h-10" />
+						<img src="/logo.svg" alt="Logo" class="h-10 w-8" />
 						<h1 class="text-lg 3xs:text-xl">Advent of Svelte</h1>
 					</a>
 				</li>
 			</ul>
 			<ul>
 				<li class="3xs:mr-1 2xs:mr-2">
-					<a class="secondary" href="https://github.com/code406/adventofsvelte">
+					<a class="secondary" href="https://github.com/code406/adventofsvelte" aria-label="GitHub Repo">
 						<Github class="w-5 3xs:w-6" />
 					</a>
 				</li>
 				<li>
-					<button class="as-link" on:click={toggleTheme}>
+					<button class="as-link" on:click={toggleTheme} title="Toggle theme">
 						<div class="toggle-sun"><SunMedium class="w-5 3xs:w-6" /></div>
 						<div class="toggle-moon"><Moon class="w-5 3xs:w-6" /></div>
 					</button>
@@ -73,8 +73,7 @@
 		min-height: 100dvh;
 	}
 	.as-link {
-		margin: calc(var(--pico-nav-link-spacing-vertical) * -1)
-			calc(var(--pico-nav-link-spacing-horizontal) * -1);
+		margin: calc(var(--pico-nav-link-spacing-vertical) * -1) calc(var(--pico-nav-link-spacing-horizontal) * -1);
 		padding: var(--pico-nav-link-spacing-vertical) var(--pico-nav-link-spacing-horizontal);
 		border: 0;
 	}
