@@ -78,9 +78,9 @@
 					<tr>
 						<td>{row.name}</td>
 						{#if row.tally >= 0}
-							<td class="text-ok">nice</td>
+							<td class="text-ok">Nice</td>
 						{:else}
-							<td class="text-primary">naughty</td>
+							<td class="text-primary">Naughty</td>
 						{/if}
 						<td>{row.tally}</td>
 						<td>
