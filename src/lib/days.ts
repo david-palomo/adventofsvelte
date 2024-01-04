@@ -62,6 +62,10 @@ export function getNextDayRoute(day: number, path = 'day/'): string | undefined 
 }
 
 export function getPreviousDayRoute(day: number, path = 'day/'): string | undefined {
-	const previousDay = days.toReversed().find((d) => d.day < day && d.completed);
-	return previousDay ? `/${path}${previousDay.day}` : undefined;
+	const reversedDays = days
+		.filter((d) => d.completed)
+		.map((d) => d.day)
+		.reverse();
+	const previousDay = reversedDays.find((d) => d < day);
+	return previousDay ? `/${path}${previousDay}` : undefined;
 }
