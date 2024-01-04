@@ -8,7 +8,7 @@
 	}>();
 </script>
 
-<a {href} role="button" class="secondary outline p-1 {href ? '' : 'opacity-0'}">
+<a {href} role="button" class="secondary outline p-1 {href ? '' : 'opacity-0'}" aria-label={type}>
 	{#if type === 'previous'}
 		<div class="flex items-center lg:space-x-3" class:mx-2={extraText}>
 			<CaretLeft class="w-5 h-5" />

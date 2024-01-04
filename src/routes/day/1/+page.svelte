@@ -58,7 +58,7 @@
 					<tr>
 						<TableHeader {handler} orderBy="name" class="sticky left-0" innerClass="pl-10">Name</TableHeader>
 						<TableHeader {handler} orderBy="tally" innerClass="justify-center pl-5">Tally</TableHeader>
-						<th class="w-0" />
+						<th class="w-0" aria-label="Actions"></th>
 					</tr></thead
 				>
 				<tbody>
@@ -125,17 +125,8 @@
 
 			<!-- <div class="mx-4 mb-5">
 				<div class="flex flex-row justify-stretch items-center space-x-3 space-y-0 p-0 my-0">
-					<input
-						class="mb-0"
-						type="text"
-						name="name"
-						placeholder="Name"
-						bind:value={newChildName}
-						maxlength="30"
-					/>
-					<button on:click={addChild} class="mx-0 p-3 transition-all bg-bg border-bg text-fg font-semibold mb-0">
-						Save
-					</button>
+					<input class="mb-0" type="text" name="name" placeholder="Name" bind:value={newChildName} maxlength="30" />
+					<button on:click={addChild} class="mx-0 p-3 transition-all bg-bg border-bg text-fg font-semibold mb-0">Save</button>
 				</div>
 			</div> -->
 			<div class="px-4 mb-5">
