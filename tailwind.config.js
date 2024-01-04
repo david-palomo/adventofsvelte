@@ -37,7 +37,7 @@ export default {
 			error: 'var(--pico-error)'
 		},
 		fontFamily: {
-			sans: ['Inter Variable', 'Inter', ...defaultTheme.fontFamily.sans]
+			sans: ['Inter', ...defaultTheme.fontFamily.sans]
 		},
 		extend: {}
 	},

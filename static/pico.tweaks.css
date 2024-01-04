@@ -2,8 +2,8 @@
 	--pico-font-size: 100%;
 	--pico-border-radius: 0.375rem;
 	--pico-border-width: 2px;
-	--pico-font-family: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--pico-font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
 	--pico-transition-duration: 0;
 	--pico-transition: var(--pico-transition-duration) ease-in-out;
 }
