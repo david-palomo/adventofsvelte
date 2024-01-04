@@ -19,7 +19,10 @@
 				</div>
 			</a>
 		{:else}
-			<div class="card flex justify-between items-center px-4 py-3 transition-all border-dashed text-border">
+			<div
+				class="card flex justify-between items-center px-4 py-3 transition-all border-dashed text-border"
+				aria-disabled="true"
+			>
 				<div class="flex flex-col justify-between">
 					<span class="font-bold">Day {day.day}</span>
 					<span class="text-sm">{day.title}</span>

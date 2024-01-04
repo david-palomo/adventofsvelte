@@ -10,16 +10,16 @@
 
 <a {href} role="button" class="secondary outline p-1 {href ? '' : 'opacity-0'}">
 	{#if type === 'previous'}
-		<div class="flex items-center lg:space-x-3 lg:mx-2">
+		<div class="flex items-center lg:space-x-3" class:mx-2={extraText}>
 			<CaretLeft class="w-5 h-5" />
 			{#if extraText}
-				<span class="hidden lg:inline pr-1 pb-0.5 min-w-24">{extraText}</span>
+				<span class="hidden lg:inline pr-2 pb-0.5">{extraText}</span>
 			{/if}
 		</div>
 	{:else if type === 'next'}
-		<div class="flex items-center lg:space-x-3 lg:mx-2">
+		<div class="flex items-center lg:space-x-3" class:mx-2={extraText}>
 			{#if extraText}
-				<span class="hidden lg:inline pl-1 pb-0.5 min-w-24">{extraText}</span>
+				<span class="hidden lg:inline pl-2 pb-0.5">{extraText}</span>
 			{/if}
 			<CaretRight class="w-5 h-5" />
 		</div>

@@ -6,38 +6,31 @@
 		handler,
 		orderBy,
 		children,
-		hideMobile = false,
-		sticky = false
+		class: className = '',
+		innerClass = ''
 	} = $props<{
 		handler: DataHandler;
 		orderBy?: string;
 		children?: any;
-		hideMobile?: boolean;
-		sticky?: boolean;
+		class?: string;
+		innerClass?: string;
 	}>();
 
 	const identifier = orderBy?.toString();
 	let sorted = $derived(handler.getSort());
 </script>
 
-<th
-	class:cursor-pointer={orderBy}
-	on:click={() => handler.sort(orderBy as Field<any>)}
-	class={hideMobile ? 'hidden sm:table-cell' : 'table-cell'}
-	class:bg-bg={sticky}
->
-	<div class="flex items-center space-x-1.5 py-4">
-		<strong>
-			{#if children}
-				{@render children()}
-			{/if}
-		</strong>
+<th class:cursor-pointer={orderBy} on:click={() => handler.sort(orderBy as Field<any>)} class={className}>
+	<div class="flex items-center py-4 {innerClass}">
+		{#if children}
+			{@render children()}
+		{/if}
 		{#if orderBy && $sorted.identifier === identifier && $sorted.direction === 'asc'}
-			<ArrowUp />
+			<ArrowUp class="ml-1.5" />
 		{:else if orderBy && $sorted.identifier === identifier && $sorted.direction === 'desc'}
-			<ArrowDown />
+			<ArrowDown class="ml-1.5" />
 		{:else if orderBy}
-			<ArrowsDownUp />
+			<ArrowsDownUp class="ml-1.5" />
 		{/if}
 	</div>
 </th>

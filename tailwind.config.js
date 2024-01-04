@@ -29,6 +29,7 @@ export default {
 			primary: 'var(--pico-primary)',
 			secondary: 'var(--pico-secondary)',
 			bgprimary: 'var(--pico-primary-background)',
+			primaryhover: 'var(--pico-primary-hover)',
 			border: 'var(--pico-border-color)',
 			fg: 'var(--pico-color)',
 			bg: 'var(--pico-background-color)',

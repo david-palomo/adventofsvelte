@@ -17,6 +17,12 @@
 	}
 }
 
+input:not([type='checkbox'], [type='radio']),
+select,
+textarea {
+	margin-bottom: 0;
+}
+
 :where(:root),
 article,
 button,
@@ -24,12 +30,6 @@ input,
 select,
 textarea {
 	transition: background-color var(--pico-transition);
-}
-
-.sticky-first-col tr > th:first-child,
-.sticky-first-col tr > td:first-child {
-	position: sticky;
-	left: 0;
 }
 
 article,
@@ -90,9 +90,15 @@ td {
 	display: var(--pico-display-moon);
 }
 
-.description strong {
+.challenge-description strong {
 	color: var(--pico-primary);
 }
+/* .challenge-description {
+	border-color: var(--pico-primary-border);
+}
+.challenge-solution {
+	border-color: var(--pico-primary-background);
+} */
 
 /* Orange color for light color scheme (Default) */
 /* Can be forced with data-theme="light" */
@@ -100,6 +106,7 @@ td {
 :root:not([data-theme='dark']) {
 	--pico-text-selection-color: rgba(240, 96, 72, 0.25);
 	--pico-primary: #c72240;
+	--pico-primary-border: #c72240cc;
 	--pico-primary-background: #008563;
 	--pico-primary-underline: rgba(197, 47, 33, 0.5);
 	--pico-primary-hover: #9b2318;
@@ -125,6 +132,7 @@ td {
 	:root:not([data-theme]) {
 		--pico-text-selection-color: rgba(241, 121, 97, 0.1875);
 		--pico-primary: #f7525a;
+		--pico-primary-border: #f7525acc;
 		--pico-primary-background: #008967;
 		--pico-primary-underline: rgba(241, 121, 97, 0.5);
 		--pico-primary-hover: #f5a390;
@@ -150,6 +158,7 @@ td {
 [data-theme='dark'] {
 	--pico-text-selection-color: rgba(241, 121, 97, 0.1875);
 	--pico-primary: #f7525a;
+	--pico-primary-border: #f7525acc;
 	--pico-primary-background: #008967;
 	--pico-primary-underline: rgba(241, 121, 97, 0.5);
 	--pico-primary-hover: #f5a390;

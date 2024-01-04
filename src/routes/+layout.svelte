@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { Github, Moon, SunMedium } from 'lucide-svelte';
+	import { Github, Moon, Sun } from 'lucide-svelte';
 	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import NProgress from 'nprogress';
@@ -24,7 +24,7 @@
 	}
 </script>
 
-<div class="wrapper relative flex flex-col font-medium font-sans">
+<div class="wrapper relative flex flex-col font-sans">
 	<main class="container flex flex-col flex-grow max-w-5xl pb-14 2xs:pb-16">
 		<nav class="pt-2 sm:pt-3 pb-3 sm:pb-4 mx-1">
 			<ul class="pb-1">
@@ -43,7 +43,7 @@
 				</li>
 				<li>
 					<button class="as-link" on:click={toggleTheme} title="Toggle theme">
-						<div class="toggle-sun"><SunMedium class="w-5 3xs:w-6" /></div>
+						<div class="toggle-sun"><Sun class="w-5 3xs:w-6" /></div>
 						<div class="toggle-moon"><Moon class="w-5 3xs:w-6" /></div>
 					</button>
 				</li>
@@ -55,7 +55,7 @@
 		</div>
 	</main>
 
-	<footer class="absolute bottom-0 w-full h-14 2xs:h-16">
+	<footer class="absolute bottom-0 w-full h-14 2xs:h-16 font-medium">
 		<div class="m-auto max-w-5xl px-2 pt-3 2xs:pt-4 text-sm flex justify-between">
 			<p class="text-[var(--pico-muted-color)] mx-2 2xs:mx-4">
 				Built by <a href="https://github.com/code406" class="secondary">code406</a>
