@@ -1,12 +1,20 @@
-@font-face {
-	font-family: 'Clear Sans Medium';
-	font-style: normal;
-	font-weight: 500;
-	src:
-		local('Clear Sans Medium'),
-		url('https://fonts.cdnfonts.com/s/16214/ClearSans-Medium.woff') format('woff');
-	font-display: swap;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Inter Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src:
+		local('Inter Variable'),
+		local('Inter'),
+		local('Inter-Variable'),
+		url('/fonts/Inter.woff2') format('woff2');
+	font-display: swap;
+}
+
+.outline {
+	@apply outline-none;
+}

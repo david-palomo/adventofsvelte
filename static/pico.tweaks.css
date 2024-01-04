@@ -1,8 +1,11 @@
+@import 'pico.min.css';
+@import 'pico.nprogress.css';
+
 :root {
 	--pico-font-size: 100%;
 	--pico-border-radius: 0.375rem;
 	--pico-border-width: 2px;
-	--pico-font-family: 'Clear Sans Medium', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+	--pico-font-family: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--pico-transition-duration: 0;
 	--pico-transition: var(--pico-transition-duration) ease-in-out;
