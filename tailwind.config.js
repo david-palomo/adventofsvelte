@@ -25,6 +25,10 @@ export default {
 			3: '3px',
 			DEFAULT: 'var(--pico-border-width)'
 		},
+		borderRadius: {
+			...defaultTheme.borderRadius,
+			DEFAULT: 'var(--pico-border-radius)'
+		},
 		colors: {
 			primary: 'var(--pico-primary)',
 			secondary: 'var(--pico-secondary)',

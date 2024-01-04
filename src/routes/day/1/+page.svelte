@@ -52,7 +52,7 @@
 
 <div class="grid gap-x-7 gap-y-5 md:grid-cols-5">
 	<article class="p-0 md:col-span-3 challenge-solution">
-		<div class="overflow-x-auto rounded-md">
+		<div class="overflow-x-auto rounded">
 			<table class="mb-0">
 				<thead>
 					<tr>
@@ -108,7 +108,7 @@
 			</table>
 		</div>
 
-		<div class="table-footer pt-6 pb-8 rounded-b-md">
+		<div class="table-footer pt-6 pb-8 rounded-b">
 			{#if $rows.length === 0 && $pageCount === 0}
 				<div class="text-center text-secondary">No people yet</div>
 			{:else}
@@ -122,14 +122,7 @@
 	<div class="flex flex-col md:col-span-2 space-y-5 md:space-y-6 order-first md:order-last">
 		<article class="p-0 challenge-solution">
 			<header class="py-3 mt-0 mx-0 mb-4 font-semibold px-5">Add New Child</header>
-
-			<!-- <div class="mx-4 mb-5">
-				<div class="flex flex-row justify-stretch items-center space-x-3 space-y-0 p-0 my-0">
-					<input class="mb-0" type="text" name="name" placeholder="Name" bind:value={newChildName} maxlength="30" />
-					<button on:click={addChild} class="mx-0 p-3 transition-all bg-bg border-bg text-fg font-semibold mb-0">Save</button>
-				</div>
-			</div> -->
-			<div class="px-4 mb-5">
+			<div class="px-4 md:px-5 mb-5 md:mb-6">
 				<div role="group" class="p-0 m-0 w-full">
 					<input type="text" name="name" placeholder="Name" bind:value={newChildName} maxlength="30" />
 					<button
@@ -142,8 +135,8 @@
 			</div>
 		</article>
 		<article class="p-0 challenge-solution">
-			<header class="py-3 mt-0 mx-0 mb-4 font-semibold px-5">Apply Filters</header>
-			<div class="grid grid-cols-1 2xs:grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-3 pb-1 px-4">
+			<header class="py-3 mt-0 mx-0 mb-4 font-semibold px-4 md:px-5">Apply Filters</header>
+			<div class="grid grid-cols-1 2xs:grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-4 pb-1 px-4 md:px-5">
 				<div class="w-full p-0 my-0">
 					<input type="text" name="search" placeholder="Search by Name..." />
 				</div>
