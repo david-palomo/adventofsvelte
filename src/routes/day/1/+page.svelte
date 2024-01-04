@@ -64,8 +64,8 @@
 				<tbody>
 					{#each $rows as row}
 						<tr>
-							<td class="font-medium sticky left-0">
-								<div class="w-10 inline-block text-center">
+							<td class="font-medium whitespace-nowrap sticky left-0">
+								<div class="w-10 inline text-center">
 									{#if row.tally >= 0}😇{:else}😈{/if}
 								</div>
 								<span>{row.name}</span>
