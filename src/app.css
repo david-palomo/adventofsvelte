@@ -12,7 +12,6 @@
 		local('Inter'),
 		local('Inter-Variable'),
 		url('/fonts/Inter.woff2') format('woff2');
-	font-display: swap;
 }
 
 .outline {
