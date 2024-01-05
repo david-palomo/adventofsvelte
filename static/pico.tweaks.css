@@ -88,6 +88,7 @@ th {
 	transition: all var(--pico-transition);
 	border-collapse: collapse;
 	background-clip: padding-box;
+	padding: calc(var(--pico-spacing) / 2.5) var(--pico-spacing);
 }
 
 th,
@@ -118,16 +119,6 @@ td {
 	display: var(--pico-display-moon);
 }
 
-.challenge-description strong {
-	color: var(--pico-primary);
-}
-/* .challenge-description {
-	border-color: var(--pico-primary-border);
-}
-.challenge-solution {
-	border-color: var(--pico-primary-background);
-} */
-
 /* Orange color for light color scheme (Default) */
 /* Can be forced with data-theme="light" */
 [data-theme='light'],
@@ -142,9 +133,9 @@ td {
 	--pico-primary-focus: transparent;
 	--pico-primary-inverse: #fff;
 	--pico-ok: #008563;
-	--pico-ok-bg: #54c59f5b;
+	--pico-ok-bg: #008563;
 	--pico-error: #c72240;
-	--pico-error-bg: #d783835b;
+	--pico-error-bg: #c72240;
 	--pico-border-color: #c5cad6;
 	--pico-range-border-color: #d6d8de;
 	--pico-range-active-border-color: #d6d8de;
@@ -170,7 +161,7 @@ td {
 		--pico-ok: #1cce93;
 		--pico-ok-bg: #22926d5b;
 		--pico-error: #f7525a;
-		--pico-error-bg: #9930415b;
+		--pico-error-bg: #8f2738c7;
 		--pico-border-color: #2a3140;
 		--pico-range-border-color: var(--pico-muted-color);
 		--pico-range-active-border-color: var(--pico-muted-color);
@@ -196,7 +187,7 @@ td {
 	--pico-ok: #1cce93;
 	--pico-ok-bg: #22926d5b;
 	--pico-error: #f7525a;
-	--pico-error-bg: #9930415b;
+	--pico-error-bg: #8f2738c7;
 	--pico-border-color: #2a3140;
 	--pico-range-border-color: var(--pico-muted-color);
 	--pico-range-active-border-color: var(--pico-muted-color);
