@@ -1,15 +1,22 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import '../app.css';
 	import { Github, Moon, Sun } from 'lucide-svelte';
 	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import NProgress from 'nprogress';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	NProgress.configure({ minimum: 0.16, showSpinner: false });
-	$: {
+	run(() => {
 		if ($navigating) NProgress.start();
 		else NProgress.done();
-	}
+	});
 
 	let theme: string;
 	if (browser) {
@@ -42,7 +49,7 @@
 					</a>
 				</li>
 				<li>
-					<button class="as-link" on:click={toggleTheme} title="Toggle theme">
+					<button class="as-link" onclick={toggleTheme} title="Toggle theme">
 						<div class="toggle-sun"><Sun class="w-5 3xs:w-6" /></div>
 						<div class="toggle-moon"><Moon class="w-5 3xs:w-6" /></div>
 					</button>
@@ -51,7 +58,7 @@
 		</nav>
 
 		<div class="mx-1 pb-8">
-			<slot />
+			{@render children?.()}
 		</div>
 	</main>
 

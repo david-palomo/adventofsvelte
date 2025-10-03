@@ -1,9 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { getDay, getNextDayRoute, getPreviousDayRoute } from '$lib/days';
 	import NavigationButton from '$lib/components/NavigationButton.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let day = $derived(Number($page.route.id?.split('/').pop() ?? 0));
+	let { children }: Props = $props();
+
+	let day = $derived(Number(page.route.id?.split('/').pop() ?? 0));
 </script>
 
 <div class="flex justify-between mt-5 mb-7 sm:mb-12 items-center">
@@ -15,4 +20,4 @@
 	<NavigationButton type="next" href={getNextDayRoute(day)} />
 </div>
 
-<slot />
+{@render children?.()}

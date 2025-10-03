@@ -15,7 +15,7 @@
 						<span class="text-ok font-bold">Day {day.day}</span>
 						<span class="text-sm">{day.title}</span>
 					</div>
-					<svelte:component this={day.icon} class="text-primary mr-1 w-7 h-7" />
+					<day.icon class="text-primary mr-1 w-7 h-7" />
 				</div>
 			</a>
 		{:else}
@@ -27,7 +27,7 @@
 					<span class="font-bold">Day {day.day}</span>
 					<span class="text-sm">{day.title}</span>
 				</div>
-				<svelte:component this={day.icon} class="mr-1 w-7 h-7" />
+				<day.icon class="mr-1 w-7 h-7" />
 			</div>
 		{/if}
 	{/each}

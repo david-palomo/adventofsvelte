@@ -24,7 +24,7 @@
 	<div>
 		<button
 			disabled={$pageNumber <= 1}
-			on:click={() => handler.setPage(1)}
+			onclick={() => handler.setPage(1)}
 			class="secondary outline p-1.5 md:p-1"
 			title="First Page"
 		>
@@ -33,7 +33,7 @@
 
 		<button
 			disabled={$pageNumber <= 1}
-			on:click={() => handler.setPage('previous')}
+			onclick={() => handler.setPage('previous')}
 			class="secondary outline p-1.5 md:p-1"
 			title="Previous Page"
 		>
@@ -42,7 +42,7 @@
 
 		<button
 			disabled={$pageNumber >= $pageCount}
-			on:click={() => handler.setPage('next')}
+			onclick={() => handler.setPage('next')}
 			class="secondary outline p-1.5 md:p-1"
 			title="Next Page"
 		>
@@ -51,7 +51,7 @@
 
 		<button
 			disabled={$pageNumber >= $pageCount}
-			on:click={() => handler.setPage($pageCount)}
+			onclick={() => handler.setPage($pageCount)}
 			class="secondary outline p-1.5 md:p-1"
 			title="Last Page"
 		>

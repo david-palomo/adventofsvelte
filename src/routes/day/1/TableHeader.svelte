@@ -20,7 +20,7 @@
 	let sorted = $derived(handler.getSort());
 </script>
 
-<th class:cursor-pointer={orderBy} on:click={() => handler.sort(orderBy as Field<any>)} class={className}>
+<th class:cursor-pointer={orderBy} onclick={() => handler.sort(orderBy as Field<any>)} class={className}>
 	<div class="flex items-center py-3.5 {innerClass}">
 		{#if children}
 			{@render children()}

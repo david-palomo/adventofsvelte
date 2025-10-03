@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { DataHandler } from '@vincjo/datatables';
+	import { DataHandler } from '@vincjo/datatables/legacy';
 	import TableHeader from './TableHeader.svelte';
 	import Pagination from './Pagination.svelte';
-	import { DotOutline, Minus, Plus, DotsThree } from 'phosphor-svelte';
+	import { DotOutline, Minus, Plus, Trash } from 'phosphor-svelte';
 	import type { Child } from './types';
-	import { browser } from '$app/environment';
 
 	const storedChildren = ''; //browser && localStorage.getItem('children');
 	const initialChildren = storedChildren ? (JSON.parse(storedChildren) as Child[]) : [];
@@ -100,7 +99,7 @@
 							<td>
 								<div class="flex justify-center items-center space-x-0 md:space-x-0">
 									<button
-										on:click={() => incrementTally(row.id, -1)}
+										onclick={() => incrementTally(row.id, -1)}
 										class="font-medium py-1.5 px-2.5 border-0 hover:border-error text-error"
 										title="Subtract 1"
 									>
@@ -110,7 +109,7 @@
 									<span class="w-9 2xs:w-10 text-center">{row.tally}</span>
 
 									<button
-										on:click={() => incrementTally(row.id, 1)}
+										onclick={() => incrementTally(row.id, 1)}
 										class="font-medium py-1.5 px-2.5 border-0 hover:border-ok text-ok"
 										title="Add 1"
 									>
@@ -120,8 +119,8 @@
 							</td>
 							<td class="pl-0">
 								<div class="flex items-center justify-end">
-									<button on:click={() => removeChild(row.id)} class="border-0 px-1.5" title="Actions">
-										<DotsThree weight="bold" class="w-5 h-5" />
+									<button onclick={() => removeChild(row.id)} class="border-0 px-1.5" title="Actions">
+										<Trash weight="bold" class="w-4 h-4 text-error opacity-80" />
 									</button>
 								</div>
 							</td>
@@ -153,7 +152,7 @@
 				<div role="group" class="p-0 m-0 w-full">
 					<input type="text" name="name" placeholder="Name" bind:value={newChildName} maxlength="20" />
 					<button
-						on:click={addChild}
+						onclick={addChild}
 						class="p-3 transition-all bg-bg border-bg text-fg whitespace-nowrap font-semibold"
 					>
 						Save
