@@ -2,7 +2,7 @@
 	import { run } from 'svelte/legacy';
 
 	import '../app.css';
-	import { Github, Moon, Sun } from 'lucide-svelte';
+	import { GithubLogo as Github, Moon, Sun } from 'phosphor-svelte';
 	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import NProgress from 'nprogress';
@@ -45,13 +45,13 @@
 			<ul>
 				<li class="3xs:mr-1 2xs:mr-2">
 					<a class="secondary" href="https://github.com/code406/adventofsvelte" aria-label="GitHub Repo">
-						<Github class="w-5 3xs:w-6" />
+						<Github class="w-6 h-6" weight="duotone" />
 					</a>
 				</li>
 				<li>
 					<button class="as-link" onclick={toggleTheme} title="Toggle theme">
-						<div class="toggle-sun"><Sun class="w-5 3xs:w-6" /></div>
-						<div class="toggle-moon"><Moon class="w-5 3xs:w-6" /></div>
+						<div class="toggle-sun"><Sun class="w-6 h-6" weight="duotone" /></div>
+						<div class="toggle-moon"><Moon class="w-6 h-6" weight="duotone" /></div>
 					</button>
 				</li>
 			</ul>

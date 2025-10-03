@@ -119,8 +119,12 @@
 							</td>
 							<td class="pl-0">
 								<div class="flex items-center justify-end">
-									<button onclick={() => removeChild(row.id)} class="border-0 px-1.5" title="Actions">
-										<Trash weight="bold" class="w-4 h-4 text-error opacity-80" />
+									<button
+										onclick={() => removeChild(row.id)}
+										class="border-0 px-1.5 opacity-50 hover:opacity-100"
+										title="Remove"
+									>
+										<Trash class="w-5 h-5 text-error" weight="duotone" />
 									</button>
 								</div>
 							</td>
