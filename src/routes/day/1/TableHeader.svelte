@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { DataHandler, Field } from '@vincjo/datatables';
+	import type { DataHandler, Field } from '@vincjo/datatables/legacy';
 	import { ArrowsDownUp, ArrowUp, ArrowDown } from 'phosphor-svelte';
 
 	let {
