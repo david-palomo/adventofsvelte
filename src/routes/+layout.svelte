@@ -1,20 +1,18 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
-	import '../app.css';
-	import { GithubLogo as Github, Moon, Sun } from 'phosphor-svelte';
 	import { browser } from '$app/environment';
-	import { navigating } from '$app/stores';
+	import { navigating } from '$app/state';
 	import NProgress from 'nprogress';
+	import { GithubLogo as Github, Moon, Sun } from 'phosphor-svelte';
+	import '../app.css';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
 
-	NProgress.configure({ minimum: 0.16, showSpinner: false });
-	run(() => {
-		if ($navigating) NProgress.start();
+	NProgress.configure({ minimum: 0.16 });
+	$effect(() => {
+		if (navigating.from) NProgress.start();
 		else NProgress.done();
 	});
 

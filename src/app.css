@@ -1,16 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-	font-family: 'Inter';
-	font-style: normal;
-	font-display: swap;
-	font-weight: 100 900;
-	src:
-		local('Inter'),
-		url('/fonts/Inter.woff2') format('woff2');
-}
 
 .outline {
 	@apply outline-none;
